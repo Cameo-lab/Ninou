@@ -20,6 +20,7 @@
             background-color: white;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: none; /* Masquer le contenu initialement */
         }
         h1 {
             color: #ff4081;
@@ -34,15 +35,27 @@
     </style>
 </head>
 <body>
-    <div class="message">
+    <div class="message" id="content">
         <h1>Alors cette plage ??? ça bronze ?</h1>
         <p>Il fait chaud NON ? hein Thom !!!</p>
-        <!-- Insérer une image ici -->
         <img src="plage.jpg" alt="Image de plage">
     </div>
+
+    <script>
+        // Demander le mot de passe à l'utilisateur
+        var password = prompt("Veuillez entrer le mot de passe pour accéder à cette page:");
+
+        // Vérifier le mot de passe
+        if (password === "plage") {
+            // Si le mot de passe est correct, afficher le contenu
+            document.getElementById("content").style.display = "block";
+        } else {
+            // Si le mot de passe est incorrect, afficher un message d'erreur ou rediriger
+            alert("Mot de passe incorrect !");
+            // Vous pouvez aussi rediriger l'utilisateur, par exemple :
+            // window.location.href = "https://www.google.com";
+        }
+    </script>
 </body>
 </html>
 
-    </div>
-</body>
-</html>
