@@ -3,30 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Je t'aime</title>
+    <title>Messages Secrets</title>
     <style>
         body {
             background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        .tabs {
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
+            background-color: #333;
         }
-        .message {
-            text-align: center;
+        .tabs button {
+            background-color: #333;
+            color: white;
+            padding: 14px 20px;
+            margin: 0;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .tabs button:hover {
+            background-color: #575757;
+        }
+        .tabs button.active {
+            background-color: #ff4081;
+        }
+        .content {
+            display: none;
             padding: 20px;
+            text-align: center;
             background-color: white;
             border-radius: 10px;
+            margin: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            display: none; /* Masquer le contenu initialement */
         }
-        h1 {
+        .content h1 {
             color: #ff4081;
-            font-size: 3em;
+            font-size: 2.5em;
         }
-        img {
+        .content img {
             margin-top: 20px;
             max-width: 100%;
             border-radius: 10px;
@@ -35,27 +52,91 @@
     </style>
 </head>
 <body>
-    <div class="message" id="content">
-        <h1>I love you </h1>
-        <p>je crois en toi !</p>
-        <img src="love.jpg" alt="Image de plage">
+
+    <!-- Onglets de navigation -->
+    <div class="tabs">
+        <button class="tablink" onclick="openTab(event, 'tab1')">Onglet 1</button>
+        <button class="tablink" onclick="openTab(event, 'tab2')">Onglet 2</button>
+        <button class="tablink" onclick="openTab(event, 'tab3')">Onglet 3</button>
+        <button class="tablink" onclick="openTab(event, 'tab4')">Onglet 4</button>
+        <button class="tablink" onclick="openTab(event, 'tab5')">Onglet 5</button>
+        <button class="tablink" onclick="openTab(event, 'tab6')">Onglet 6</button>
+        <button class="tablink" onclick="openTab(event, 'tab7')">Onglet 7</button>
+    </div>
+
+    <!-- Contenu des onglets -->
+    <div id="tab1" class="content">
+        <h1>Message 1</h1>
+        <p>Tu es incroyable!</p>
+        <img src="love.jpg" alt="Image 1">
+    </div>
+    <div id="tab2" class="content">
+        <h1>Message 2</h1>
+        <p>Continue de croire en toi!</p>
+        <img src="love.jpg" alt="Image 2">
+    </div>
+    <div id="tab3" class="content">
+        <h1>Message 3</h1>
+        <p>Je suis fier de toi!</p>
+        <img src="love.jpg" alt="Image 3">
+    </div>
+    <div id="tab4" class="content">
+        <h1>Message 4</h1>
+        <p>Chaque jour est une nouvelle opportunité!</p>
+        <img src="love.jpg" alt="Image 4">
+    </div>
+    <div id="tab5" class="content">
+        <h1>Message 5</h1>
+        <p>Tu es sur la bonne voie!</p>
+        <img src="love.jpg" alt="Image 5">
+    </div>
+    <div id="tab6" class="content">
+        <h1>Message 6</h1>
+        <p>Reste toujours positif!</p>
+        <img src="love.jpg" alt="Image 6">
+    </div>
+    <div id="tab7" class="content">
+        <h1>Message 7</h1>
+        <p>Je crois en toi!</p>
+        <img src="love.jpg" alt="Image 7">
     </div>
 
     <script>
-        // Demander le mot de passe à l'utilisateur
-        var password = prompt("Veuillez entrer le mot de passe pour accéder à cette page:");
+        // Fonction pour ouvrir un onglet
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            // Demander le mot de passe pour cet onglet
+            var password = prompt("Veuillez entrer le mot de passe pour accéder à cet onglet:");
+            if (checkPassword(tabName, password)) {
+                document.getElementById(tabName).style.display = "block";
+                evt.currentTarget.className += " active";
+            } else {
+                alert("Mot de passe incorrect !");
+            }
+        }
 
-        // Vérifier le mot de passe
-        if (password === "plage") {
-            // Si le mot de passe est correct, afficher le contenu
-            document.getElementById("content").style.display = "block";
-        } else {
-            // Si le mot de passe est incorrect, afficher un message d'erreur ou rediriger
-            alert("Mot de passe incorrect !");
-            // Vous pouvez aussi rediriger l'utilisateur, par exemple :
-            // window.location.href = "https://www.google.com";
+        // Vérification du mot de passe pour chaque onglet
+        function checkPassword(tabName, password) {
+            var passwords = {
+                'tab1': 'motdepasse1',
+                'tab2': 'motdepasse2',
+                'tab3': 'motdepasse3',
+                'tab4': 'motdepasse4',
+                'tab5': 'motdepasse5',
+                'tab6': 'motdepasse6',
+                'tab7': 'motdepasse7'
+            };
+            return passwords[tabName] === password;
         }
     </script>
+
 </body>
 </html>
-
