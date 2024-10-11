@@ -86,7 +86,7 @@
     <div class="container">
         <!-- Onglets de navigation -->
         <div class="tabs">
-            <button class="tablink" onclick="openTab(event, 'tab1')">Onglet 1</button>
+            <button class="tablink" onclick="openTab(event, 'tab1')">Onglet 1 (Pas de mot de passe)</button>
             <button class="tablink" onclick="openTab(event, 'tab2')">Onglet 2</button>
             <button class="tablink" onclick="openTab(event, 'tab3')">Onglet 3</button>
             <button class="tablink" onclick="openTab(event, 'tab4')">Onglet 4</button>
@@ -95,7 +95,7 @@
             <button class="tablink" onclick="openTab(event, 'tab7')">Onglet 7</button>
             <button class="tablink" onclick="openTab(event, 'tab8')">Onglet 8</button>
             <button class="tablink" onclick="openTab(event, 'tab9')">Onglet 9</button>
-            <button class="tablink" onclick="openTab(event, 'tab10')">Onglet 10 (Pas de mot de passe)</button>
+            <button class="tablink" onclick="openTab(event, 'tab10')">Onglet 10</button>
         </div>
 
         <!-- Contenu des onglets -->
@@ -181,7 +181,6 @@
         // Vérification du mot de passe pour chaque onglet (sauf onglet 10)
         function checkPassword(tabName, password) {
             var passwords = {
-                'tab1': 'motdepasse1',
                 'tab2': 'motdepasse2',
                 'tab3': 'motdepasse3',
                 'tab4': 'motdepasse4',
@@ -189,7 +188,8 @@
                 'tab6': 'motdepasse6',
                 'tab7': 'motdepasse7',
                 'tab8': 'motdepasse8',
-                'tab9': 'motdepasse9'
+                'tab9': 'motdepasse9',
+                'tab10': 'motdepasse10',
             };
             return passwords[tabName] === password;
         }
