@@ -5,44 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Messages Secrets</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
         body {
-            background-color: #f5f5f5;
-            font-family: Arial, sans-serif;
+            background-image: url('background.jpg'); /* Remplacez 'background.jpg' par votre image de fond */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
         }
+
+        .container {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.6); /* Fond semi-transparent */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
         .tabs {
             display: flex;
             justify-content: center;
-            background-color: #333;
+            background-color: rgba(51, 51, 51, 0.8); /* Onglets semi-transparents */
+            border-radius: 5px;
         }
+
         .tabs button {
-            background-color: #333;
+            background-color: transparent;
             color: white;
             padding: 14px 20px;
             margin: 0;
             border: none;
             cursor: pointer;
             font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s;
         }
+
         .tabs button:hover {
-            background-color: #575757;
+            background-color: #ff4081;
         }
+
         .tabs button.active {
             background-color: #ff4081;
         }
+
         .content {
             display: none;
             padding: 20px;
             text-align: center;
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
-            margin: 20px;
+            margin-top: 20px;
+            color: #333;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+
         .content h1 {
+            font-size: 3em;
             color: #ff4081;
-            font-size: 2.5em;
         }
+
         .content img {
             margin-top: 20px;
             max-width: 100%;
@@ -53,52 +83,72 @@
 </head>
 <body>
 
-    <!-- Onglets de navigation -->
-    <div class="tabs">
-        <button class="tablink" onclick="openTab(event, 'tab1')">Onglet 1</button>
-        <button class="tablink" onclick="openTab(event, 'tab2')">Onglet 2</button>
-        <button class="tablink" onclick="openTab(event, 'tab3')">Onglet 3</button>
-        <button class="tablink" onclick="openTab(event, 'tab4')">Onglet 4</button>
-        <button class="tablink" onclick="openTab(event, 'tab5')">Onglet 5</button>
-        <button class="tablink" onclick="openTab(event, 'tab6')">Onglet 6</button>
-        <button class="tablink" onclick="openTab(event, 'tab7')">Onglet 7</button>
-    </div>
+    <div class="container">
+        <!-- Onglets de navigation -->
+        <div class="tabs">
+            <button class="tablink" onclick="openTab(event, 'tab1')">Onglet 1</button>
+            <button class="tablink" onclick="openTab(event, 'tab2')">Onglet 2</button>
+            <button class="tablink" onclick="openTab(event, 'tab3')">Onglet 3</button>
+            <button class="tablink" onclick="openTab(event, 'tab4')">Onglet 4</button>
+            <button class="tablink" onclick="openTab(event, 'tab5')">Onglet 5</button>
+            <button class="tablink" onclick="openTab(event, 'tab6')">Onglet 6</button>
+            <button class="tablink" onclick="openTab(event, 'tab7')">Onglet 7</button>
+            <button class="tablink" onclick="openTab(event, 'tab8')">Onglet 8</button>
+            <button class="tablink" onclick="openTab(event, 'tab9')">Onglet 9</button>
+            <button class="tablink" onclick="openTab(event, 'tab10')">Onglet 10 (Pas de mot de passe)</button>
+        </div>
 
-    <!-- Contenu des onglets -->
-    <div id="tab1" class="content">
-        <h1>Message 1</h1>
-        <p>Tu es incroyable!</p>
-        <img src="love.jpg" alt="Image 1">
-    </div>
-    <div id="tab2" class="content">
-        <h1>Message 2</h1>
-        <p>Continue de croire en toi!</p>
-        <img src="love.jpg" alt="Image 2">
-    </div>
-    <div id="tab3" class="content">
-        <h1>Message 3</h1>
-        <p>Je suis fier de toi!</p>
-        <img src="love.jpg" alt="Image 3">
-    </div>
-    <div id="tab4" class="content">
-        <h1>Message 4</h1>
-        <p>Chaque jour est une nouvelle opportunité!</p>
-        <img src="love.jpg" alt="Image 4">
-    </div>
-    <div id="tab5" class="content">
-        <h1>Message 5</h1>
-        <p>Tu es sur la bonne voie!</p>
-        <img src="love.jpg" alt="Image 5">
-    </div>
-    <div id="tab6" class="content">
-        <h1>Message 6</h1>
-        <p>Reste toujours positif!</p>
-        <img src="love.jpg" alt="Image 6">
-    </div>
-    <div id="tab7" class="content">
-        <h1>Message 7</h1>
-        <p>Je crois en toi!</p>
-        <img src="love.jpg" alt="Image 7">
+        <!-- Contenu des onglets -->
+        <div id="tab1" class="content">
+            <h1>Message 1</h1>
+            <p>Tu es incroyable!</p>
+            <img src="love.jpg" alt="Image 1">
+        </div>
+        <div id="tab2" class="content">
+            <h1>Message 2</h1>
+            <p>Continue de croire en toi!</p>
+            <img src="love.jpg" alt="Image 2">
+        </div>
+        <div id="tab3" class="content">
+            <h1>Message 3</h1>
+            <p>Je suis fier de toi!</p>
+            <img src="love.jpg" alt="Image 3">
+        </div>
+        <div id="tab4" class="content">
+            <h1>Message 4</h1>
+            <p>Chaque jour est une nouvelle opportunité!</p>
+            <img src="love.jpg" alt="Image 4">
+        </div>
+        <div id="tab5" class="content">
+            <h1>Message 5</h1>
+            <p>Tu es sur la bonne voie!</p>
+            <img src="love.jpg" alt="Image 5">
+        </div>
+        <div id="tab6" class="content">
+            <h1>Message 6</h1>
+            <p>Reste toujours positif!</p>
+            <img src="love.jpg" alt="Image 6">
+        </div>
+        <div id="tab7" class="content">
+            <h1>Message 7</h1>
+            <p>Je crois en toi!</p>
+            <img src="love.jpg" alt="Image 7">
+        </div>
+        <div id="tab8" class="content">
+            <h1>Message 8</h1>
+            <p>Ne jamais abandonner!</p>
+            <img src="love.jpg" alt="Image 8">
+        </div>
+        <div id="tab9" class="content">
+            <h1>Message 9</h1>
+            <p>La persévérance est la clé!</p>
+            <img src="love.jpg" alt="Image 9">
+        </div>
+        <div id="tab10" class="content">
+            <h1>Message 10</h1>
+            <p>Félicitations, tu es arrivé jusqu'ici sans mot de passe!</p>
+            <img src="love.jpg" alt="Image 10">
+        </div>
     </div>
 
     <script>
@@ -113,17 +163,22 @@
             for (i = 0; i < tablinks.length; i++) {
                 tablinks[i].className = tablinks[i].className.replace(" active", "");
             }
-            // Demander le mot de passe pour cet onglet
-            var password = prompt("Veuillez entrer le mot de passe pour accéder à cet onglet:");
-            if (checkPassword(tabName, password)) {
-                document.getElementById(tabName).style.display = "block";
-                evt.currentTarget.className += " active";
-            } else {
-                alert("Mot de passe incorrect !");
+
+            // Vérification du mot de passe uniquement pour les 9 premiers onglets
+            if (tabName !== 'tab10') {
+                var password = prompt("Veuillez entrer le mot de passe pour accéder à cet onglet:");
+                if (!checkPassword(tabName, password)) {
+                    alert("Mot de passe incorrect !");
+                    return;
+                }
             }
+            
+            // Afficher le contenu de l'onglet sélectionné
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
         }
 
-        // Vérification du mot de passe pour chaque onglet
+        // Vérification du mot de passe pour chaque onglet (sauf onglet 10)
         function checkPassword(tabName, password) {
             var passwords = {
                 'tab1': 'motdepasse1',
@@ -132,7 +187,9 @@
                 'tab4': 'motdepasse4',
                 'tab5': 'motdepasse5',
                 'tab6': 'motdepasse6',
-                'tab7': 'motdepasse7'
+                'tab7': 'motdepasse7',
+                'tab8': 'motdepasse8',
+                'tab9': 'motdepasse9'
             };
             return passwords[tabName] === password;
         }
